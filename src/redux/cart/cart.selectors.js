@@ -13,3 +13,8 @@ export const selectCartItemsCount = createSelector(
     [selectCartItems],
     items => items.reduce((cummulativeSum, currentValue) => (cummulativeSum += currentValue.quantity), 0)
 )
+
+export const selectCartHidden = createSelector(
+    [selectCart],
+    cart => cart.hidden
+)
