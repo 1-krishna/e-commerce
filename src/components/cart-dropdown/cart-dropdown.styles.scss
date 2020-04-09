@@ -10,12 +10,25 @@
     top: 90px;
     right: 40px;
     z-index: 5;
+    //hiding scrollbar
+    -ms-overflow-style: none; // IE 10+
+    overflow: -moz-scrollbars-none; // Firefox
+
+    .empty-message {
+        font-size: 18px;
+        margin: 50px auto;
+    }
 
     .cart-items {
         height: 240px;
         display: flex;
         flex-direction: column;
-        overflow: scroll;
+        overflow-y: scroll;
+        scrollbar-width: none; //hiding scrollbar in firefox
+    }
+    //for hiding scrollbar in chrome
+    ::-webkit-scrollbar {
+        display: none;
     }
 
     button {
