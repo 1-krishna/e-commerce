@@ -3,7 +3,6 @@ import './cart-item.styles.scss';
 
 const CartItem = (props) => {
     const { name, imageUrl, price, quantity } = props
-    console.log(props)
     return (< div className='cart-item' >
         <img src={imageUrl} alt={name} />
         <div className='item-details'>
