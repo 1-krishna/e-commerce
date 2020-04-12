@@ -4,33 +4,34 @@ const INITIAL_STATE = {
             title: 'hats',
             imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
             id: 1,
-            linkUrl: 'hats'
+            linkUrl: 'shop/hats'
         },
         {
             title: 'jackets',
             imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
             id: 2,
-            linkUrl: ''
+            linkUrl: 'shop/jackets'
         },
         {
             title: 'sneakers',
             imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
             id: 3,
-            linkUrl: ''
+            linkUrl: 'shop/sneakers'
         },
         {
             title: 'womens',
             imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
             size: 'large',
             id: 4,
-            linkUrl: ''
+            linkUrl: 'shop/womens'
         },
         {
             title: 'mens',
-            imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+            //imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+            imageUrl: 'https://cdn.shopify.com/s/files/1/1600/0963/articles/pose-ecommerce-responsive-men-women-fashion-shop-shopify-theme-blog-image-2-themetidy_2048x2048.jpg?v=1479186922',
             size: 'large',
             id: 5,
-            linkUrl: ''
+            linkUrl: 'shop/mens'
         }
     ]
 }
