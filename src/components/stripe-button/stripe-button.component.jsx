@@ -1,9 +1,8 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
-import { PUBLISHABLE_KEY } from './stripe-button.utils';
 
 const StripeCheckoutButton = ({ price }) => {
-    const publishableKey = PUBLISHABLE_KEY;
+    const publishableKey = process.env.REACT_APP_STRIPE_KEY;
     const priceForStripe = price * 100;
 
     const onToken = token => {
