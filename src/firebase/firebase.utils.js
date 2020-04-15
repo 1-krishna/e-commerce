@@ -2,8 +2,6 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-const config = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG);
-
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
 
@@ -31,7 +29,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     return userRef;
 }
 
-firebase.initializeApp(config);
+firebase.initializeApp(JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG));
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
