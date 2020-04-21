@@ -2,6 +2,9 @@
     width: 450px;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 999px) {
+        padding-top: 50px;
+    }
 
     .title {
         margin: 10px 0;
