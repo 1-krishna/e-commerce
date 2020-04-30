@@ -14,6 +14,7 @@ import { setCurrentUser } from './redux/user/user.actions';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import ContactPage from './pages/contact/contact.component';
+import PageNotFound from './pages/page-not-found/page-not-found.component';
 
 class App extends React.Component {
 
@@ -52,10 +53,8 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route path='/' exact component={HomePage} />
-          <Route path='/shop' component={Shop} />
           <Route path='/checkout' exact component={CheckoutPage} />
           <Route path='/contact' exact component={ContactPage} />
-
           <Route
             exact
             path='/signin'
@@ -63,6 +62,8 @@ class App extends React.Component {
               this.props.currentUser ?
                 (<Redirect to='/' />) :
                 (<SignInAndSignUpPage />)} />
+          <Route path='/shop' component={Shop} />
+          <Route path='*' render={() => <PageNotFound countdown='10' />} />
         </Switch>
       </div>
     );

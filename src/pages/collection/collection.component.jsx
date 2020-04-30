@@ -3,8 +3,12 @@ import './collection.styles.scss';
 import { connect } from 'react-redux';
 import { selectCollection } from '../../redux/shop/shop.selectors';
 import CollectionItem from '../../components/collection-item/collection-item.component';
+import PageNotFound from '../page-not-found/page-not-found.component';
 
 const CollectionPage = ({ collection }) => {
+    if (!collection) {
+        return (<PageNotFound countdown='10' />)
+    }
     const { title, items } = collection;
     return (
         <div className='collection-page'>
