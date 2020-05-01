@@ -16,6 +16,9 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import ContactPage from './pages/contact/contact.component';
 import PageNotFound from './pages/page-not-found/page-not-found.component';
 
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from 'react-notifications';
+
 class App extends React.Component {
 
   unsubscribeFromAuth = null;
@@ -50,21 +53,24 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Switch>
-          <Route path='/' exact component={HomePage} />
-          <Route path='/checkout' exact component={CheckoutPage} />
-          <Route path='/contact' exact component={ContactPage} />
-          <Route
-            exact
-            path='/signin'
-            render={() =>
-              this.props.currentUser ?
-                (<Redirect to='/' />) :
-                (<SignInAndSignUpPage />)} />
-          <Route path='/shop' component={Shop} />
-          <Route path='*' render={() => <PageNotFound countdown='10' />} />
-        </Switch>
+        <React.StrictMode>
+          <Header />
+          <Switch>
+            <Route path='/' exact component={HomePage} />
+            <Route path='/checkout' exact component={CheckoutPage} />
+            <Route path='/contact' exact component={ContactPage} />
+            <Route
+              exact
+              path='/signin'
+              render={() =>
+                this.props.currentUser ?
+                  (<Redirect to='/' />) :
+                  (<SignInAndSignUpPage />)} />
+            <Route path='/shop' component={Shop} />
+            <Route path='*' render={() => <PageNotFound countdown='10' />} />
+          </Switch>
+        </React.StrictMode>
+        <NotificationContainer />
       </div>
     );
   }

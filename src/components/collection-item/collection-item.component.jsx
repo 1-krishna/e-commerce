@@ -3,6 +3,7 @@ import './collection-item.styles.scss';
 import CustomButton from '../custom-button/custom-button.component';
 import { addItem } from '../../redux/cart/cart.actions';
 import { connect } from 'react-redux';
+import { NotificationManager } from 'react-notifications';
 
 const CollectionItem = ({ item, addItem }) => {
     const { name, imageUrl, price } = item;
@@ -17,7 +18,7 @@ const CollectionItem = ({ item, addItem }) => {
             <span className='name'>{name}</span>
             <span className='price'>{price}₹</span>
         </div>
-        <CustomButton inverted className='custom-button' onClick={() => addItem(item)}>Add To Cart</CustomButton>
+        <CustomButton inverted className='custom-button' onClick={() => { addItem(item); NotificationManager.success(item.name, 'Successfully Added') }}>Add To Cart</CustomButton>
     </div>)
 }
 
